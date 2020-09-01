@@ -24,14 +24,21 @@ class Data
 		{
 			String html = "https://fileinfo.com/extension/"+extension;
 			Document doc = Jsoup.connect(html).userAgent("Mozilla/5.0").get();
-			Elements temp = doc.select("table.headerInfo").get(0).getElementsByTag("tr");
-			this.developer = temp.get(0).getElementsByTag("td").get(1).text();
-			//i
+			Elements e1 = doc.select("table.headerInfo").get(0).getElementsByTag("tr");
+			this.developer = e1.get(0).getElementsByTag("td").get(1).text();
+			Elements e2=doc.select("div.infoBox").get(0).getElementsByTag("p");
+			this.description=e2.get(0).text();
+			//this.category=
+			
 		}
 		catch(IOException e)
 		{
 			e.printStackTrace();
 		}
+	}
+	public String getCategory()
+	{
+		return this.category;
 	}
 	public String getDeveloper() {
 		return this.developer;
