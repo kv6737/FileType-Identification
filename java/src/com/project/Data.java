@@ -26,7 +26,7 @@ class Data
 			Document doc = Jsoup.connect(html).userAgent("Mozilla/5.0").get();
 			Elements temp = doc.select("table.headerInfo").get(0).getElementsByTag("tr");
 			this.developer = temp.get(0).getElementsByTag("td").get(1).text();
-			
+			//i
 		}
 		catch(IOException e)
 		{
@@ -35,5 +35,8 @@ class Data
 	}
 	public String getDeveloper() {
 		return this.developer;
+	}
+	public String getDescription() {
+		return this.description;
 	}
 }

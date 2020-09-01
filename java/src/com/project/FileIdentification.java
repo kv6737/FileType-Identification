@@ -18,6 +18,7 @@ public class FileIdentification {
 			
 			Data data = new Data(fileName, extension);
 			System.out.println("Developer: " + data.getDeveloper());
+			System.out.println("Description: " + data.getDescription());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
