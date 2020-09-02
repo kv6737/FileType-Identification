@@ -2,6 +2,7 @@ package com.project;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -25,12 +26,14 @@ class Source1 extends Data
 			this.developer = e2.get(0).getElementsByTag("td").get(1).text();
 			Elements e3=doc.select("div.infoBox").get(0).getElementsByTag("p");
 			this.description=e3.get(0).text();
-			Elements e4=doc.select("div.infoBox").select(query)
+			Elements e4=doc.select("div.infoBox").get(0).getElementsByTag("tr").get(0).getElementsByTag("td").get(1).getElementsByClass("table.apps").get(0).getElementsByTag("tr");
+			List<String>arr=new ArrayList<String>();
 			for(int i=0;i<e4.size();i++)
 			{
-				Elements temp=e4.get(i).getElementsByTag("td");
-				System.out.println(temp.get(0).text()+" "+temp.get(1).text());
+				arr.add(e4.get(i).text());
 			}
+			this.associatedApplications=arr;
+			System.out.print(e4.size());
 			
 		}
 		catch(IOException e)
