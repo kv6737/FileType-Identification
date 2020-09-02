@@ -28,7 +28,7 @@ class Data
 	public String getDescription() {
 		return this.description;
 	}
-	public String getAssociatedApplications() {
+	public List<String> getAssociatedApplications() {
 		return this.associatedApplications;
 	}
 }
