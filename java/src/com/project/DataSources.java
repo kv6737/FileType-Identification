@@ -28,16 +28,10 @@ class Source1 extends Data
 			Elements e3=doc.select("div.infoBox").get(0).getElementsByTag("p");
 			this.description=e3.get(0).text();
 			Elements e4=doc.select("table.apps").get(0).getElementsByTag("tr");
+			List<String>arr=new ArrayList<String>();
 			for(Element row : e4) {
-				System.out.println(row.getElementsByTag("a").get(0).text());
+				arr.add(row.getElementsByTag("a").get(0).text());
 			}
-			/*List<String>arr=new ArrayList<String>();
-			for(int i=0;i<e4.size();i++)
-			{
-				arr.add(e4.get(i).text());
-			}
-			this.associatedApplications=arr;
-			System.out.print(e4.size());*/
 			
 		}
 		catch(IOException e)
