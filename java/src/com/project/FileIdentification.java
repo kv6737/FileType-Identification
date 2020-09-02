@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 import com.project.Data;
+import com.project.Source1;
 
 public class FileIdentification {
 
@@ -16,7 +17,7 @@ public class FileIdentification {
 			String fileName = file[0];
 			String extension = file[1];
 			
-			Data data = new Data(fileName, extension);
+			Data data = new Source1(fileName, extension);
 			System.out.println("Developer: " + data.getDeveloper());
 			System.out.println("Description: " + data.getDescription());
 		} catch (IOException e) {
