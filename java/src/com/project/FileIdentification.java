@@ -5,7 +5,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
-import java.util.List;
+import java.util.Iterator;
+import java.util.*;
 
 import org.json.simple.JSONArray; 
 import org.json.simple.JSONObject; 
@@ -41,12 +42,19 @@ public class FileIdentification {
 	public static HashMap<String, String> buildLangMap(){
 		HashMap<String, String> map = new HashMap<String, String>();
 		
-		try {
-			
+		try {	
 			Object obj = new JSONParser().parse(new FileReader("res/languages.json"));
 			JSONArray jsonArray = (JSONArray) obj;
-			
-			//System.out.println(jsonArray.size());
+			for(Object i : jsonArray) {
+				JSONObject temp = (JSONObject) i;
+				String lang = (String) temp.get("name");
+				JSONArray exts = (JSONArray) temp.get("extensions");
+				if(exts != null)
+					for(Object ext : exts) 
+						map.put(ext.toString(), lang);
+			}
+//			System.out.println(jsonArray.size());
+//			System.out.println(map.size());
 			
 		} catch (IOException | ParseException e) {
 			// TODO Auto-generated catch block
