@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import com.project.Data;
@@ -26,14 +27,17 @@ class Source1 extends Data
 			this.developer = e2.get(0).getElementsByTag("td").get(1).text();
 			Elements e3=doc.select("div.infoBox").get(0).getElementsByTag("p");
 			this.description=e3.get(0).text();
-			Elements e4=doc.select("div.infoBox").get(0).getElementsByTag("tr").get(0).getElementsByTag("td").get(1).getElementsByClass("table.apps").get(0).getElementsByTag("tr");
-			List<String>arr=new ArrayList<String>();
+			Elements e4=doc.select("table.apps").get(0).getElementsByTag("tr");
+			for(Element row : e4) {
+				System.out.println(row.getElementsByTag("a").get(0).text());
+			}
+			/*List<String>arr=new ArrayList<String>();
 			for(int i=0;i<e4.size();i++)
 			{
 				arr.add(e4.get(i).text());
 			}
 			this.associatedApplications=arr;
-			System.out.print(e4.size());
+			System.out.print(e4.size());*/
 			
 		}
 		catch(IOException e)
