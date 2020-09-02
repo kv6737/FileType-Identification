@@ -20,6 +20,7 @@ public class FileIdentification {
 			Data data = new Source1(fileName, extension);
 			System.out.println("Developer: " + data.getDeveloper());
 			System.out.println("Description: " + data.getDescription());
+			System.out.println("Category: " + data.getCategory());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
