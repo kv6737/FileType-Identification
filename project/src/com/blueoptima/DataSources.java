@@ -1,4 +1,4 @@
-package com.project;
+package com.blueoptima;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import com.project.Data;
+import com.blueoptima.Data;
 
 class Source1 extends Data
 {
@@ -66,15 +66,7 @@ class Source3 extends Data
 {
 	Source3(String fileName,String extension)
 	{
-		try
-		{
-			
-			
-		}
-		catch(IOException e)
-		{
-			e.printStackTrace();
-		}
+
 	}
 }
 
