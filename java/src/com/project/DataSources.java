@@ -19,12 +19,13 @@ class Source1 extends Data
 		{
 			String html = "https://fileinfo.com/extension/"+extension;
 			Document doc = Jsoup.connect(html).userAgent("Mozilla/5.0").get();
-			Elements e1 = doc.select("table.headerInfo").get(0).getElementsByTag("tr");
-			this.developer = e1.get(0).getElementsByTag("td").get(1).text();
-			Elements e2=doc.select("div.infoBox").get(0).getElementsByTag("p");
-			this.description=e2.get(0).text();
-			Elements e3 = doc.select("table.headerInfo").get(0).getElementsByTag("tr");
-			this.category = e1.get(2).getElementsByTag("td").get(1).text();
+			Elements e1 = doc.select("section.ext").get(0).getElementsByTag("h2");
+			this.category=e1.get(0).text().replace("File Type","");
+			Elements e2 = doc.select("table.headerInfo").get(0).getElementsByTag("tr");
+			this.developer = e2.get(0).getElementsByTag("td").get(1).text();
+			Elements e3=doc.select("div.infoBox").get(0).getElementsByTag("p");
+			this.description=e3.get(0).text();
+			
 			
 		}
 		catch(IOException e)
