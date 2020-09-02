@@ -42,8 +42,8 @@ class Source2 extends Data
 			Document doc = Jsoup.connect(html).userAgent("Mozilla/5.0").get();
 			Elements e1 = doc.select("table.headerInfo").get(0).getElementsByTag("tr");
 			this.developer = e1.get(0).getElementsByTag("td").get(1).text();
-			Elements e2=doc.select("div.infoBox").get(0).getElementsByTag("p");
-			this.description=e2.get(0).text();
+			Elements e2 = doc.select("div.infoBox").get(0).getElementsByTag("p");
+			this.description = e2.get(0).text();
 			//this.category=
 			
 		}
@@ -64,8 +64,8 @@ class Source3 extends Data
 			Document doc = Jsoup.connect(html).userAgent("Mozilla/5.0").get();
 			Elements e1 = doc.select("table.headerInfo").get(0).getElementsByTag("tr");
 			this.developer = e1.get(0).getElementsByTag("td").get(1).text();
-			Elements e2=doc.select("div.infoBox").get(0).getElementsByTag("p");
-			this.description=e2.get(0).text();
+			Elements e2 = doc.select("div.infoBox").get(0).getElementsByTag("p");
+			this.description = e2.get(0).text();
 			//this.category=
 			
 		}
