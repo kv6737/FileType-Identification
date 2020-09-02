@@ -31,17 +31,3 @@ class Source1 extends Data
 		}
 	}
 }
-class source2 extends Data
-{
-	source2()
-	{
-		
-	}
-}
-class source3
-{
-	source3()
-	{
-		
-	}
-}
