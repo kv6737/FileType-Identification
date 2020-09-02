@@ -14,8 +14,8 @@ public class FileIdentification {
 			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 			String input = br.readLine();//the input file name should be of the form file_name.file_extension like abc.pdf,abc.txt etc
 			String file[] = input.split("\\.");
-			String fileName = file[0];
-			String extension = file[1];
+			String fileName = input;
+			String extension = file[file.length - 1];
 			
 			Data data = new Source1(fileName, extension);
 			System.out.println("Developer: " + data.getDeveloper());
@@ -23,6 +23,5 @@ public class FileIdentification {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-}
-
+	}
 }
