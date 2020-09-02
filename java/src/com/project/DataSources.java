@@ -25,7 +25,12 @@ class Source1 extends Data
 			this.developer = e2.get(0).getElementsByTag("td").get(1).text();
 			Elements e3=doc.select("div.infoBox").get(0).getElementsByTag("p");
 			this.description=e3.get(0).text();
-			
+			Elements e4=doc.select("div.infoBox").select(query)
+			for(int i=0;i<e4.size();i++)
+			{
+				Elements temp=e4.get(i).getElementsByTag("td");
+				System.out.println(temp.get(0).text()+" "+temp.get(1).text());
+			}
 			
 		}
 		catch(IOException e)
