@@ -19,11 +19,11 @@ class Data
 	private List<String> associatedApplications;
 	Data(String fileName,String extension)
 	{
-		this.description=null;
-		this.category=null;
-		this.language=null;
-		this.paradigm=null;
-		this.developer=null;
+		this.description=new String();
+		this.category=new String();
+		this.language=new String();
+		this.paradigm=new String();
+		this.developer=new String();
 		this.associatedApplications = new ArrayList<String>();
 		
 	}
