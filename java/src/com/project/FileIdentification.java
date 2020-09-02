@@ -51,7 +51,7 @@ public class FileIdentification {
 				JSONArray exts = (JSONArray) temp.get("extensions");
 				if(exts != null)
 					for(Object ext : exts) 
-						map.put(ext.toString(), lang);
+						map.put(ext.toString().replace("\\.",""), lang);
 			}
 //			System.out.println(jsonArray.size());
 //			System.out.println(map.size());
