@@ -17,7 +17,15 @@ class Data
 	protected String paradigm;
 	protected String developer;
 	protected List<String> associatedApplications;
-	
+	Data()
+	{
+		this.description=new String();
+		this.category=new String();
+		this.language="NA";
+		this.paradigm="NA";
+		this.developer=new String();
+		this.associatedApplications=new ArrayList<String>();
+	}
 	public String getCategory()
 	{
 		return this.category;
