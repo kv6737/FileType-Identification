@@ -32,8 +32,8 @@ public class FileIdentification {
 			System.out.println("Category: " + data.getCategory());
 			System.out.println("Associated Applications: ");
 			List<String>arr=data.getAssociatedApplications();
-			for(String s:arr)
-				System.out.println(s);
+			for(int i=1;i<=arr.size();i++)
+				System.out.println(i+" "+arr.get(i-1));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
