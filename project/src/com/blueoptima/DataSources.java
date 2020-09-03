@@ -26,14 +26,11 @@ class Source1 extends Data
 			Elements e3=doc.select("div.infoBox").get(0).getElementsByTag("p");
 			this.description=e3.get(0).text();
 			Elements e4=doc.select("table.apps").get(0).getElementsByTag("tr");
-
 			List<String>arr=new ArrayList<String>();
 			for(Element row : e4) {
-				
 				arr.add(row.getElementsByTag("a").get(0).text().toString());
 			}
 			this.associatedApplications=arr;
-			
 		}
 		catch(IOException e)
 		{
@@ -54,7 +51,6 @@ class Source2 extends Data
 			Elements e2 = doc.select("div.infoBox").get(0).getElementsByTag("p");
 			this.description = e2.get(0).text();
 			//this.category=
-			
 		}
 		catch(IOException e)
 		{
