@@ -22,14 +22,36 @@ public class Main {
             String fileName = input;
             String extension = file[file.length - 1];
 
-            Data data = new Source1(fileName, extension);
-            System.out.println("Developer: " + data.getDeveloper());
-            System.out.println("Description: " + data.getDescription());
-            System.out.println("Category: " + data.getCategory());
+            // Data from sorce1
+            Data data1 = new Source1(fileName, extension);
+            System.out.println("Developer: " + data1.getDeveloper());
+            System.out.println("Description: " + data1.getDescription());
+            System.out.println("Category: " + data1.getCategory());
             System.out.println("Associated Applications: ");
-            List<String> arr=data.getAssociatedApplications();
-            for(int i=1;i<=arr.size();i++)
-                System.out.println(i+" "+arr.get(i-1));
+            List<String> arr1=data1.getAssociatedApplications();
+            for(int i=1;i<=arr1.size();i++)
+                System.out.println(i+" "+arr1.get(i-1));
+
+            // Data from source2
+            Data data2=new Source2(fileName,extension);
+            System.out.println("Developer: " + data2.getDeveloper());
+            System.out.println("Description: " + data2.getDescription());
+            System.out.println("Category: " + data2.getCategory());
+            System.out.println("Associated Applications: ");
+            List<String> arr2=data2.getAssociatedApplications();
+            for(int i=1;i<=arr2.size();i++)
+                System.out.println(i+" "+arr2.get(i-1));
+
+            // Data from source3
+            Data data3=new Source3(fileName,extension);
+            System.out.println("Developer: " + data3.getDeveloper());
+            System.out.println("Description: " + data3.getDescription());
+            System.out.println("Category: " + data3.getCategory());
+            System.out.println("Associated Applications: ");
+            List<String> arr3=data3.getAssociatedApplications();
+            for(int i=1;i<=arr3.size();i++)
+                System.out.println(i+" "+arr3.get(i-1));
+
         } catch (IOException e) {
             e.printStackTrace();
         }
