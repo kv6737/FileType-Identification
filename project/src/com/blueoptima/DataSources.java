@@ -28,12 +28,7 @@ class Source1 extends Data
 			Elements e4=doc.select("table.apps").get(0).getElementsByTag("tr");
 			List<String>arr=new ArrayList<String>();
 			for(Element row : e4) {
-<<<<<<< Updated upstream
-				arr.add(row.getElementsByTag("a").get(0).text().toString());
-=======
-				
 				arr.add(row.getElementsByTag("a").get(0).text());
->>>>>>> Stashed changes
 			}
 			this.associatedApplications=arr;
 		}
@@ -53,8 +48,8 @@ class Source2 extends Data
 			Document doc = Jsoup.connect(html).userAgent("Mozilla/5.0").get();
 			Elements e1 = doc.select("table.head").get(0).getElementsByTag("tr");
 			this.category = e1.get(1).getElementsByTag("td").get(1).text();
-			Elements e2 = doc.select("div.content").get(0).getElementsByTag("p");
-			this.description = e2.get(0).text();
+			Element e2 = doc.select("div.content").get(3);
+			this.description = e2.getElementsByTag("p").get(0).text();
 
 		}
 		catch(IOException e)
