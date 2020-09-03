@@ -65,6 +65,8 @@ public class Main {
             JSONArray jsonArray = (JSONArray) obj;
             for(Object i : jsonArray) {
                 JSONObject temp = (JSONObject) i;
+
+
                 String lang = (String) temp.get("name");
                 JSONArray exts = (JSONArray) temp.get("extensions");
                 if(exts != null)

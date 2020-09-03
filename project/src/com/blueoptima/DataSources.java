@@ -28,7 +28,12 @@ class Source1 extends Data
 			Elements e4=doc.select("table.apps").get(0).getElementsByTag("tr");
 			List<String>arr=new ArrayList<String>();
 			for(Element row : e4) {
+<<<<<<< Updated upstream
 				arr.add(row.getElementsByTag("a").get(0).text().toString());
+=======
+				
+				arr.add(row.getElementsByTag("a").get(0).text());
+>>>>>>> Stashed changes
 			}
 			this.associatedApplications=arr;
 		}
